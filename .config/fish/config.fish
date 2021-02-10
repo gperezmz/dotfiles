@@ -1,7 +1,12 @@
 #!/usr/bin/env fish
 
-# import homebrew for linux
-/home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+# import homebrew
+switch (uname)
+case Linux
+  /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+case Darwin
+  
+end
 
 # flux completions
 flux completion fish | source
