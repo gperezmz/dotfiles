@@ -10,3 +10,5 @@
     cmd = code --wait $MERGED
 [pull]
     rebase = true
+[user]
+	name = Guillermo Pérez
