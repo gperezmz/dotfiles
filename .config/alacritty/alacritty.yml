@@ -1,0 +1,100 @@
+window:
+  dimensions:
+    columns: 100
+    lines: 30
+
+  padding:
+    x: 0
+    y: 0
+
+  decorations: none
+
+font:
+  normal:
+    family: Cascadia Code
+    style: Regular
+
+  bold:
+    family: Cascadia Code
+    style: SemiBold
+
+  italic:
+    family: Cascadia Code
+
+  size: 18.0
+
+  use_thin_strokes: true
+
+# Colors (Ayu Dark)
+colors:
+  # Default colors
+  primary:
+    background: '0x0A0E14'
+    foreground: '0xB3B1AD'
+
+  # Normal colors
+  normal:
+    black:   '0x01060E'
+    red:     '0xEA6C73'
+    green:   '0x91B362'
+    yellow:  '0xF9AF4F'
+    blue:    '0x53BDFA'
+    magenta: '0xFAE994'
+    cyan:    '0x90E1C6'
+    white:   '0xC7C7C7'
+
+  # Bright colors
+  bright:
+    black:   '0x686868'
+    red:     '0xF07178'
+    green:   '0xC2D94C'
+    yellow:  '0xFFB454'
+    blue:    '0x59C2FF'
+    magenta: '0xFFEE99'
+    cyan:    '0x95E6CB'
+    white:   '0xFFFFFF'
+
+key_bindings:
+  # override
+  - { key: Return,    mods: Command,     action: ToggleFullscreen   }
+
+  # spanish ISO layout
+  - { key: 10,        mods: Alt,          chars: "\x5c"             } # `\`
+  - { key: 18,        mods: Alt,          chars: "\x7c"             } # `|`
+  - { key: Key2,      mods: Alt,          chars: "@"                }
+  - { key: Key3,      mods: Alt,          chars: "#"                }
+  - { key: Key6,      mods: Alt,          chars: "¬"                }
+  - { key: 39,        mods: Alt,          chars: "{"                }
+  - { key: 42,        mods: Alt,          chars: "}"                }
+  - { key: 33,        mods: Alt,          chars: "["                }
+  - { key: 30,        mods: Alt,          chars: "]"                }
+
+    # shortcuts for tmux. the leader key is control-a (0x01)
+  - { key: W,        mods: Command,       chars: "\x01&"            }  # close tab (kill)
+  - { key: T,        mods: Command,       chars: "\x01c"            }  # new tab
+  - { key: Tab,      mods: Control,       chars: "\x01n"            }  # select next tab
+  - { key: Tab,      mods: Control|Shift, chars: "\x01p"            }  # select previous tab
+  - { key: D,        mods: Command,       chars: "\x01%"            }  # split panel vertically
+  - { key: D,        mods: Command|Shift, chars: "\x01\""           }  # split panel horizontally
+  - { key: Right,    mods: Control|Shift, chars: "\x01o"            }  # select next pane
+  - { key: Left,     mods: Control|Shift, chars: "\x01;"            }  # select last (previously used) pane
+    #  - { key: F,        mods: Command,       chars: "\x01/"            }  # search (upwards) (see tmux.conf)
+
+mouse:
+  hide_when_typing: true
+
+  url:
+    modifiers: Command
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+dynamic_title: true
+
+live_config_reload: true
+
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - --command=tmux attach || tmux
+
