@@ -5,8 +5,12 @@ switch (uname)
 case Linux
   /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 case Darwin
-  
+  /usr/local/bin/brew shellenv | source
 end
+
+# editor
+set -Ux EDITOR vim
+set -Ux VISUAL code --wait
 
 # flux completions
 flux completion fish | source
@@ -16,6 +20,9 @@ set -U fish_greeting ""
 
 # fish
 abbr -a unset 'set --erase'
+
+# vim
+alias -s vim "nvim"
 
 # bat
 abbr -a cat bat
