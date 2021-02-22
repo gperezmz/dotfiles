@@ -8,6 +8,9 @@ case Darwin
   /usr/local/bin/brew shellenv | source
 end
 
+# set prompt
+starship init fish | source
+
 # editor
 set -Ux EDITOR vim
 set -Ux VISUAL code --wait
