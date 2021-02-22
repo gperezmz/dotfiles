@@ -1,6 +1,9 @@
 [aws]
 disabled = true
 
+[hostname]
+format = "@[$hostname]($style) "
+
 [kubernetes]
 symbol = "⛵"
 format = 'on [$symbol $context \($namespace\)]($style) in '
@@ -8,3 +11,6 @@ disabled = false
 
 [kubernetes.context_aliases]
 "guillermo.perezm@ddc.eu-west-1.eksctl.io" = "aws-eks-ddc"
+
+[username]
+format = "[$user]($style)"
