@@ -5,8 +5,7 @@ disabled = true
 format = "@[$hostname]($style) "
 
 [kubernetes]
-symbol = "⛵"
-format = 'on [$symbol $context \($namespace\)]($style) in '
+format = 'on [$symbol$context \($namespace\)]($style) in '
 disabled = false
 
 [kubernetes.context_aliases]
