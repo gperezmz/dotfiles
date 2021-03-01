@@ -4,22 +4,23 @@ window:
     lines: 30
 
   padding:
-    x: 0
-    y: 0
+    x: 6
+    y: 6
 
-  decorations: none
+    # decorations: none
 
 font:
   normal:
-    family: Cascadia Code
+    family: Hack
     style: Regular
 
   bold:
-    family: Cascadia Code
-    style: SemiBold
+    family: Hack
+    style: Bold
 
   italic:
-    family: Cascadia Code
+    family: Hack
+    style: Italic
 
   size: 18.0
 
@@ -69,7 +70,7 @@ key_bindings:
   - { key: 33,        mods: Alt,          chars: "["                }
   - { key: 30,        mods: Alt,          chars: "]"                }
 
-    # shortcuts for tmux. the leader key is control-a (0x01)
+  # shortcuts for tmux. the leader key is control-a (0x01)
   - { key: W,        mods: Command,       chars: "\x01&"            }  # close tab (kill)
   - { key: T,        mods: Command,       chars: "\x01c"            }  # new tab
   - { key: Tab,      mods: Control,       chars: "\x01n"            }  # select next tab
@@ -78,7 +79,16 @@ key_bindings:
   - { key: D,        mods: Command|Shift, chars: "\x01\""           }  # split panel horizontally
   - { key: Right,    mods: Control|Shift, chars: "\x01o"            }  # select next pane
   - { key: Left,     mods: Control|Shift, chars: "\x01;"            }  # select last (previously used) pane
-    #  - { key: F,        mods: Command,       chars: "\x01/"            }  # search (upwards) (see tmux.conf)
+  # jump to tab 1-9
+  - { key: Key1,     mods: Command,       chars: "\x01\x31"         }  # tab 1
+  - { key: Key2,     mods: Command,       chars: "\x01\x32"         }  # tab 2
+  - { key: Key3,     mods: Command,       chars: "\x01\x33"         }  # tab 3
+  - { key: Key4,     mods: Command,       chars: "\x01\x34"         }  # tab 4
+  - { key: Key5,     mods: Command,       chars: "\x01\x35"         }  # tab 5
+  - { key: Key6,     mods: Command,       chars: "\x01\x36"         }  # tab 6
+  - { key: Key7,     mods: Command,       chars: "\x01\x37"         }  # tab 7
+  - { key: Key8,     mods: Command,       chars: "\x01\x38"         }  # tab 8
+  - { key: Key9,     mods: Command,       chars: "\x01\x39"         }  # tab 9
 
 mouse:
   hide_when_typing: true
@@ -94,7 +104,11 @@ dynamic_title: true
 live_config_reload: true
 
 shell:
-  program: /usr/local/bin/fish
+  program: /usr/local/bin/tmux
   args:
-    - --command=tmux attach || tmux
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
 
