@@ -3,9 +3,13 @@
 # import homebrew
 switch (uname)
 case Linux
-  /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+  if test -e /home/linuxbrew/.linuxbrew/bin/brew
+    /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+  end
 case Darwin
-  /usr/local/bin/brew shellenv | source
+  if test -e /usr/local/bin/brew
+    /usr/local/bin/brew shellenv | source
+  end
 end
 
 # set prompt
